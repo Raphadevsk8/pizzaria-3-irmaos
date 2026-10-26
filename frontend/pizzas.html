@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Pizzas</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de Pizzas</h1>
+
+    <form id="pizza-form" class="card">
+      <input type="hidden" id="codigo">
+      
+      <div class="form-group">
+        <label>Nome:</label>
+        <input type="text" id="nome" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label>Ingredientes:</label>
+        <textarea id="ingredientes" class="form-control" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Imagem (nome do arquivo):</label>
+        <input type="text" id="imagem" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Preço:</label>
+        <input type="number" id="preco" class="form-control" step="0.01" required>
+      </div>
+
+      <div class="form-group">
+        <label>Status:</label>
+        <select id="status" class="form-control">
+          <option value="ativo">Ativa</option>
+          <option value="inativo">Inativa</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button type="reset" onclick="limparFormulario()" class="btn btn-secondary">Limpar</button>
+    </form>
+
+    <hr>
+
+    <h2>Lista de Pizzas</h2>
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Ingredientes</th>
+            <th>Imagem</th>
+            <th>Preço</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="lista-pizzas"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="assets/js/pizzas.js"></script>
+</body>
+</html>

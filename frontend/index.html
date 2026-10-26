@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzaria Delícia - Sistema de Gestão</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-pizza-slice"></i> Pizzaria 3-Irmãos
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Início</a>
+        <a href="clientes.html"><i class="fas fa-users"></i> Clientes</a>
+        <a href="pizzas.html"><i class="fas fa-utensils"></i> Cardápio</a>
+        <a href="catalogo.html"><i class="fas fa-clipboard-list"></i>Catalogo</a>
+        <a href="pedidos.html"><i class="fas fa-clipboard-list"></i> Pedidos</a>
+        <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Bem-vindo a pizzaria 3-Irmãos</h1>
+        <p>venha conhecer o sabor da alegria</p>
+        <div class="hero-buttons">
+          <a href="pedidos.html" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Novo Pedido
+          </a>
+          <a href="dashboard.html" class="btn btn-secondary">
+            <i class="fas fa-chart-line"></i> Ver Dashboard
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/img/pizza-hero.png" alt="Pizza deliciosa">
+      </div>
+    </section>
+
+    <section class="quick-actions">
+      <h2><i class="fas fa-bolt"></i> Ações Rápidas</h2>
+      <div class="action-grid">
+        <a href="clientes.html" class="action-card">
+          <i class="fas fa-user-plus"></i>
+          <span>Cadastrar Cliente</span>
+        </a>
+        <a href="pizzas.html" class="action-card">
+          <i class="fas fa-plus-circle"></i>
+          <span>Adicionar Pizza</span>
+        </a>
+        <a href="pedidos.html?status=em_andamento" class="action-card">
+          <i class="fas fa-clock"></i>
+          <span>Pedidos em Andamento</span>
+        </a>
+        <a href="pedidos.html?status=entregue" class="action-card">
+          <i class="fas fa-check-circle"></i>
+          <span>Pedidos Finalizados</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="status-section">
+      <div class="status-card">
+        <h3><i class="fas fa-clock"></i> Pedidos Recentes</h3>
+        <div class="status-list" id="pedidos-recentes">
+          
+        </div>
+        <a href="pedidos.html" class="btn btn-link">Ver todos</a>
+      </div>
+      
+      <div class="status-card">
+        <h3><i class="fas fa-star"></i> Pizzas Populares</h3>
+        <div class="status-list" id="pizzas-populares">
+          
+        </div>
+        <a href="pizzas.html" class="btn btn-link">Ver cardápio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Sistema de Gestão Pizzaria 3-Irmãos &copy; 2025</p>
+      <div class="footer-links">
+        <a href="#"><i class="fas fa-question-circle"></i> Ajuda</a>
+        <a href="#"><i class="fas fa-cog"></i> Configurações</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/index.js"></script>
+</body>
+</html>

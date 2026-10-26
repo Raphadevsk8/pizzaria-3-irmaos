@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Novo Pedido</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Novo Pedido</h1>
+
+    <div class="card">
+      <label for="buscaCliente">Buscar cliente por nome ou telefone:</label>
+      <input type="text" id="buscaCliente" placeholder="Digite nome ou telefone" oninput="buscarCliente()" />
+      <div id="clienteSelecionado" class="info"></div>
+    </div>
+
+    <div class="card">
+      <h2>Escolha as pizzas</h2>
+      <div id="listaPizzas"></div>
+    </div>
+
+    <div class="card resumo">
+      <h3>Total: R$ <span id="total">0.00</span></h3>
+
+      <label for="pagamento">Forma de pagamento:</label>
+      <select id="pagamento">
+        <option value="dinheiro">Dinheiro</option>
+        <option value="cartao">Cartão</option>
+      </select>
+
+      <div id="campoCartao" style="display: none;">
+        <label for="numeroCartao">Número do cartão:</label>
+        <input type="text" id="numeroCartao" maxlength="16" placeholder="Digite o número do cartão" />
+      </div>
+
+      <button onclick="fecharPedido()">Fechar Pedido</button>
+    </div>
+  </div>
+
+  <script src="assets/js/pedido.js"></script>
+  <script>
+    document.getElementById('pagamento').addEventListener('change', function () {
+      const campoCartao = document.getElementById('campoCartao');
+      campoCartao.style.display = this.value === 'cartao' ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>

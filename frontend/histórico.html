@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Pedidos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Pedidos em Atendimento</h1>
+  <div id="pedidos"></div>
+
+  <script>
+    async function carregarPedidos() {
+      const res = await fetch('http://localhost:3000/pedidos/ativos');
+      const pedidos = await res.json();
+      const container = document.getElementById('pedidos');
+      container.innerHTML = '';
+
+      pedidos.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'pedido';
+
+        const select = document.createElement('select');
+        ['Pedido feito aguardando pagamento', 'Pedido Pago e em preparação', 'Pedido atendido e entregue'].forEach(op => {
+          const option = document.createElement('option');
+          option.value = op;
+          option.textContent = op;
+          if (op === p.status) option.selected = true;
+          select.appendChild(option);
+        });
+
+        const btn = document.createElement('button');
+        btn.textContent = 'Atualizar Status';
+        btn.onclick = async () => {
+          const novoStatus = select.value;
+          await fetch(`http://localhost:3000/pedidos/${p.numero}/status`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: novoStatus })
+          });
+          carregarPedidos(); 
+        };
+
+        div.innerHTML = `<p><strong>Pedido #${p.numero}</strong><br>Status: ${p.status}<br>Total: R$ ${p.valorTotal.toFixed(2)}</p>`;
+        div.appendChild(select);
+        div.appendChild(btn);
+        container.appendChild(div);
+      });
+    }
+
+    carregarPedidos();
+  </script>
+</body>
+</html>

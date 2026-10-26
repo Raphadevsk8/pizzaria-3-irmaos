@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Clientes - Pizzaria</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <h1>Cadastro de Clientes</h1>
+
+  <form id="cliente-form">
+    <input type="hidden" id="codigo">
+    <label>Nome: <input type="text" id="nome" required></label>
+    <label>Telefone: <input type="text" id="telefone" required></label>
+    <label>Endereço: <input type="text" id="endereco"></label>
+    <label>Status:
+      <select id="status">
+        <option value="ativo">Ativo</option>
+        <option value="inativo">Inativo</option>
+      </select>
+    </label>
+    <button type="submit">Salvar</button>
+    <button type="reset" onclick="limparFormulario()">Limpar</button>
+  </form>
+
+  <hr>
+
+  <h2>Buscar Clientes</h2>
+  <input type="text" id="busca" placeholder="Buscar por nome ou telefone" oninput="buscarClientes()">
+  
+  <table border="1">
+    <thead> 
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="lista-clientes"></tbody>
+  </table>
+
+  <script src="assets/js/clientes.js"></script>
+</body>
+</html>

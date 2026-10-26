@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Pizzaria</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">Pizzaria Delícia</div>
+      <nav class="nav-menu">
+        <a href="index.html">Início</a>
+        <a href="clientes.html">Clientes</a>
+        <a href="pizzas.html">Pizzas</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="catalogo.html">Catalogo</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Dashboard</h1>
+    
+    <div class="card">
+      <h2 class="card-title">Resumo do Dia</h2>
+      <div class="dashboard-summary">
+        <div class="summary-card">
+          <h3>Pedidos Hoje</h3>
+          <p id="pedidos-hoje">0</p>
+        </div>
+        <div class="summary-card">
+          <h3>Faturamento</h3>
+          <p id="faturamento-hoje">R$ 0,00</p>
+        </div>
+        <div class="summary-card">
+          <h3>Pedidos em Andamento</h3>
+          <p id="pedidos-andamento">0</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2 class="card-title">Últimos Pedidos</h2>
+      <table class="table" id="ultimos-pedidos">
+        <thead>
+          <tr>
+            <th>Nº Pedido</th>
+            <th>Cliente</th>
+            <th>Valor</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    
+    <div class="card">
+      <h2 class="card-title">Pizzas Mais Vendidas</h2>
+      <canvas id="pizzas-chart" width="400" height="200"></canvas>
+    </div>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
